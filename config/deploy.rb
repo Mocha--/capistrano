@@ -38,6 +38,7 @@ set :scm, :git
 # set :keep_releases, 5
 
 namespace :deploy do
+  before :deploy, 'git:push'
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do

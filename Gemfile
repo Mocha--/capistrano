@@ -31,8 +31,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deploy
 gem 'capistrano', '~> 3.4.0'
-gem 'capistrano-rails', group: :development
-
+gem 'capistrano-rails'
+gem 'capistrano-rvm'
+gem 'capistrano3-git-push', '~> 0.0.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

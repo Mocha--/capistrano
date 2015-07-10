@@ -38,6 +38,7 @@ set :scm, :git
 # set :keep_releases, 5
 
 namespace :deploy do
+ # before :deploy, "precompile"
   before :deploy, 'git:push'
 
   after :restart, :clear_cache do

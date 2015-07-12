@@ -8,7 +8,7 @@
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 server '52.11.105.179', user: 'ubuntu', roles: %w{app}, ssh_options: {
      user: 'ubuntu', # overrides user setting above
-     keys: %w(/home/mocha/.ssh/id_rsa.pub),
+     keys: %w(/home/mocha/.ssh/amazon/xibowangmelb@gmail.com.pem),
      forward_agent: false,
      auth_methods: %w(publickey)
      # password: 'please use keys'

@@ -49,5 +49,6 @@ namespace :deploy do
       # end
     end
   end
+  after :finishing, "db:migrate"
 
 end

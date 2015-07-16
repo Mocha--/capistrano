@@ -6,6 +6,9 @@ set :repo_url, 'git@github.com:Mocha--/capistrano.git'
 set :branch, 'master'
 set :deploy_to, '/home/ubuntu/www/capistranoTest'
 set :scm, :git
+#set :scm, :none
+#set :repo_url, "."
+#set :deploy_via, :copy
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -39,6 +42,7 @@ set :scm, :git
 
 namespace :deploy do
   before :deploy, "precompile"
+  #before :depoly, "deploy:precompile_assets"
   before :deploy, 'git:push'
 
   after :restart, :clear_cache do
@@ -49,6 +53,5 @@ namespace :deploy do
       # end
     end
   end
-  after :finishing, "db:migrate"
 
 end
